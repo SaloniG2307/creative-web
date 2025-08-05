@@ -1,0 +1,250 @@
+<html>
+    <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BOOKSHOP</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+        <style>
+            html {
+                scroll-behavior: smooth;
+
+            }
+            body,html {
+                margin: 0;
+                font-family :Arial, sans-serif;
+            }
+            .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0b55b6;
+      padding: 10px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+     .navbar .logo {
+      color: #fff;
+      font-size: 25px;
+      font-weight: bold;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      
+    }
+    .navbar ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+      
+      
+    }
+    .navbar ul li a:hover {
+      color: #f0c040;
+      background-color: black;
+    }
+    .intro .left {
+  flex: 1;
+  display: flex;
+  align-items: center;       /* Vertically centers the image */
+  justify-content: center;   /* Horizontally centers the image */
+  flex-direction: column;
+}
+
+  
+    .right h1 {
+      font-size: 3rem;
+      text-align: center;
+    }
+    .right h2 {
+      font-size:1.5rem;
+      margin:10px 0;
+      text-align: center;
+    }
+    .intro .right button{
+      padding :10px 20px;
+      font-size:1rem;
+      cursor:pointer;
+      background-color:rgb(6, 111, 239);
+      color:white;
+      border:none;
+      align-items: center;
+      justify-content: center;
+
+    }
+    .button-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+    .section {
+      padding : 60px 20px;
+      margin-top:20px;
+    }
+    .section h2{
+      text-align:center;
+      font-size:2rem;
+    }
+    .section h3 {
+      text-align: center;
+      font-weight: normal;
+      color: black;
+      font-style: italic;
+    } .card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s;
+      position: relative;
+      padding: 10px;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card .badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: orange;
+      color: white;
+      padding: 5px;
+      border-radius: 5px;
+    } .card img {
+      max-width: 100%;
+      border-radius: 5px;
+      border-color: #0b55b6;
+    }
+    .card button {
+      display: none;
+    }
+    .card:hover button {
+      display:  solid block;
+    }
+    .reviews-form {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .form-container form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .form-container input, .form-container textarea {
+      padding: 10px;
+      width: 300px;
+    }
+    .form-container button {
+      width: 150px;
+      padding: 10px;
+      background: #5f0de3;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .footer {
+      background: #5505f6;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .footer a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    
+    
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 2px;
+      background: hsl(246, 92%, 46%);
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    
+    
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo">BookShop</div>
+            <ul id="nav-links">
+                <li><a href="#intro">home</a></li>
+                <li><a href="#bestbook"> best selling</a></li>
+                <li><a href="#recommendations">Recommendations </a></li>
+                <li><a href ="#review">Reviews</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            </div>
+        </nav>
+        <section id="intro" class="intro">
+          <div class="left">
+            
+            <img src="bookshop2.jpg" style="width:50%; height:auto;  align-items: center">
+            
+          </div>
+          <div class="right">
+            <h1>Welcome to Bookshop</h1>
+            <h2> Your one-stop book destination </h2>
+            <a href="#bestselling"><button>Best Selling Books</button></a>
+          </div>
+        </section>
+        <section id="best-selling" class="section">
+          <h2>Best selling Books </h2>
+          <h3>Discover the top pics loved by our readers!</h3>
+        </section>
+        <section id="recommendations" class="section">
+          <h2>Recommendations</h2>
+          <h3>Tailored suggestions just for you</h3>
+          <div class="search-bar">
+            <input type="text" placeholder="search books....">
+            <button><i class="fas fa-search"></i></button>
+          </div>
+        </section>
+         <section id="reviews" class="section">
+    <h2>Reviews</h2>
+    <div class="reviews-form">
+      <div class="cards">
+        <!-- Review cards here -->
+      </div>
+      <div class="form-container">
+        <form>
+          <input type="text" placeholder="Name">
+          <input type="email" placeholder="Email">
+           <textarea rows="4" placeholder="Your review..."></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div>
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+      <a href="#">Copyright</a>
+    </div>
+  </footer>
+
+  <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    </body>
+</html>
